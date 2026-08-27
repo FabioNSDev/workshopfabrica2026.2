@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do usuário</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; max-width: 600px; }
+        p { margin: 10px 0; }
+        a { color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>{{ usuario.first_name }} {{ usuario.last_name }}</h1>
+        <p><strong>Login:</strong> {{ usuario.login }}</p>
+        <p><strong>E-mail:</strong> {{ usuario.email }}</p>
+        <p><strong>Senha:</strong> {{ usuario.password }}</p>
+        <p><strong>Telefone:</strong> {{ usuario.phone }}</p>
+        <p><strong>Idade:</strong> {{ usuario.age }}</p>
+
+        <p>
+            <a href="{% url 'usuario_update' usuario.pk %}">Editar</a> |
+            <a href="{% url 'usuario_list' %}">Voltar</a>
+        </p>
+    </div>
+</body>
+</html>
